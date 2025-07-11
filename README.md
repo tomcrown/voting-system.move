@@ -49,9 +49,10 @@ Each poll and vote is stored as a distinct object on-chain.
 🚀 Getting Started
 1. Clone the repo
 git clone https://github.com/tomcrown/voting-system.move.git
+
 cd voting-system.move
 
-2. Install dependencies
+3. Install dependencies
 pnpm install
 # or
 npm install
