@@ -79,17 +79,21 @@ Make sure you're connected to the Sui Testnet via a supported wallet like Sui Wa
 
 ✅ End the poll and finalize outcome
 
+
 Note: Frontend is super basic — but it does let you interact with everything on-chain!
 
 🤝 Contributions
+
 PRs, feedback, and suggestions are welcome!
 Feel free to fork the repo or open an issue.
 
 👋 Author
+
 @tomcrown
 Learning and building in public on Sui.
 
 🐣 Disclaimer
+
 This project was built for educational and portfolio purposes.
 While the core logic is secure, it is not audited. Please use at your own risk.
 
