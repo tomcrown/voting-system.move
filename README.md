@@ -69,6 +69,7 @@ Make sure you're connected to the Sui Testnet via a supported wallet like Sui Wa
 
 
 💡 Demo Flow
+
 ✅ Connect wallet
 
 ✅ Create a poll
@@ -82,15 +83,18 @@ Make sure you're connected to the Sui Testnet via a supported wallet like Sui Wa
 
 Note: Frontend is super basic — but it does let you interact with everything on-chain!
 
+
 🤝 Contributions
 
 PRs, feedback, and suggestions are welcome!
 Feel free to fork the repo or open an issue.
 
+
 👋 Author
 
 @tomcrown
 Learning and building in public on Sui.
+
 
 🐣 Disclaimer
 
