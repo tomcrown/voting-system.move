@@ -33,9 +33,6 @@ GitHub Repo: [github.com/tomcrown/voting-system.move](https://github.com/tomcrow
 **Package ID**  
 0x937f16d260a2d5b9b5245116846cc6d4b595a3293dcfe0d7f82f17a4498893fb
 
-kotlin
-Copy
-Edit
 
 **Module**: `voting::poll`
 
@@ -48,25 +45,24 @@ public fun get_results(...)
 entry fun end_poll(...)
 Each poll and vote is stored as a distinct object on-chain.
 
+
 🚀 Getting Started
 1. Clone the repo
 git clone https://github.com/tomcrown/voting-system.move.git
 cd voting-system.move
+
 2. Install dependencies
 pnpm install
 # or
 npm install
+
 3. Start the frontend
 pnpm dev
 # or
 npm run dev
 Make sure you're connected to the Sui Testnet via a supported wallet like Sui Wallet.
 
-🧪 Testing the Contract
-Unit tests are available to validate core logic.
 
-
-sui move test
 💡 Demo Flow
 ✅ Connect wallet
 
