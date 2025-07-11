@@ -7,6 +7,8 @@ import { PACKAGE_ID } from "../../constants";
 export function CreatePoll() {
   const [title, setTitle] = useState("");
   const [options, setOptions] = useState<string[]>(["", ""]);
+  const [deadline, setDeadline] = useState<number>(Math.floor(Date.now() / 1000) + 3600);;
+
 
   const { mutate: createPoll } = useSignAndExecuteTransaction();
 
@@ -16,10 +18,12 @@ export function CreatePoll() {
     const tx = new Transaction();
 
     tx.moveCall({
-      target: `${PACKAGE_ID}::voting::create_poll`,
+      target: `${PACKAGE_ID}::poll::create_poll`,
       arguments: [
-        tx.pure(title),
-        tx.pure(options), 
+        tx.pure.string(title),
+        tx.pure.vector('string', options),
+        tx.pure.u64(deadline), 
+        tx.object("0x6")
       ],
     });
 
@@ -68,6 +72,16 @@ export function CreatePoll() {
           required
         />
       ))}
+
+      <input
+        className="border p-2 w-full rounded"
+        placeholder="Deadline (UTC timestamp)"
+        type="number"
+        value={deadline}
+        onChange={(e) => setDeadline(Number(e.target.value))}
+        required
+      />
+
 
       <button
         type="button"

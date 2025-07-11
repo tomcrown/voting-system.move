@@ -1,12 +1,13 @@
 // src/components/FinalizePoll.tsx
 import {
-  useSignAndExecuteTransaction,
+  useSignAndExecuteTransaction, useCurrentAccount
 } from "@mysten/dapp-kit";
 import { useState } from "react";
 import { Transaction } from "@mysten/sui/transactions";
 import { PACKAGE_ID } from "../../constants";
 
 export function FinalizePoll() {
+    const account = useCurrentAccount();
   const [pollId, setPollId] = useState("");
   const { mutate: finalizePoll } = useSignAndExecuteTransaction();
 
@@ -15,8 +16,8 @@ export function FinalizePoll() {
 
     const tx = new Transaction();
     tx.moveCall({
-      target: `${PACKAGE_ID}::voting::finalize_poll`,
-      arguments: [tx.object(pollId)],
+      target: `${PACKAGE_ID}::poll::end_poll`,
+      arguments: [tx.object(pollId), tx.pure.address(account?.address as string), tx.object("0x6")],
     });
 
     finalizePoll(

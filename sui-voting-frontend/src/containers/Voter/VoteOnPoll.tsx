@@ -1,12 +1,13 @@
 // src/components/VoteOnPoll.tsx
 import {
-  useSignAndExecuteTransaction,
+  useSignAndExecuteTransaction, useCurrentAccount
 } from "@mysten/dapp-kit";
 import { useState } from "react";
-import { TransactionBlock } from "@mysten/sui.js/transactions";
+import { Transaction } from "@mysten/sui/transactions";
 import { PACKAGE_ID } from "../../constants";
 
 export function VoteOnPoll() {
+  const account = useCurrentAccount();
   const { mutate: votePoll } = useSignAndExecuteTransaction();
   const [pollId, setPollId] = useState("");
   const [option, setOption] = useState("");
@@ -14,10 +15,10 @@ export function VoteOnPoll() {
   const handleVote = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const tx = new TransactionBlock();
+    const tx = new Transaction();
     tx.moveCall({
-      target: `${PACKAGE_ID}::voting::vote`,
-      arguments: [tx.object(pollId), tx.pure(option)],
+      target: `${PACKAGE_ID}::poll::vote`,
+      arguments: [tx.object(pollId), tx.pure.u64(option), tx.pure.address(account?.address as string), tx.object("0x6"), ],
     });
 
     votePoll(
