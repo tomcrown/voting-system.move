@@ -1,7 +1,7 @@
 # 🗳️ Sui Voting System
 
 A fully on-chain voting system built with Sui Move and connected to a basic React frontend.  
-Create polls, cast votes, view live results, and finalize decisions — all stored on the Sui blockchain.
+Create polls, cast votes, view live results, and finalize decisions, all stored on the Sui blockchain.
 
 > ⚠️ The frontend may not win design awards, but it gets the job done 😉
 
