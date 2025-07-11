@@ -1,6 +1,6 @@
 // src/components/CreatePoll.tsx
 import { useSignAndExecuteTransaction } from "@mysten/dapp-kit";
-import { TransactionBlock } from "@mysten/sui.js/transactions";
+import { Transaction } from "@mysten/sui/transactions";
 import { useState } from "react";
 import { PACKAGE_ID } from "../../constants";
 
@@ -13,7 +13,7 @@ export function CreatePoll() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const tx = new TransactionBlock();
+    const tx = new Transaction();
 
     tx.moveCall({
       target: `${PACKAGE_ID}::voting::create_poll`,
