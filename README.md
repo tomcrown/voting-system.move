@@ -44,7 +44,7 @@ entry fun vote(...)
 public fun get_results(...)
 entry fun end_poll(...)
 Each poll and vote is stored as a distinct object on-chain.
-
+```
 
 🚀 Getting Started
 1. Clone the repo
