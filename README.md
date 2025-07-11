@@ -50,17 +50,21 @@ Each poll and vote is stored as a distinct object on-chain.
 1. Clone the repo
 git clone https://github.com/tomcrown/voting-system.move.git
 
-cd voting-system.move
+```cd voting-system.move```
 
 3. Install dependencies
+```
 pnpm install
 # or
 npm install
+```
 
 3. Start the frontend
+```
 pnpm dev
 # or
 npm run dev
+```
 Make sure you're connected to the Sui Testnet via a supported wallet like Sui Wallet.
 
 
